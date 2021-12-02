@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { Carousel, Container, Col, Row } from 'react-bootstrap'
 import items from '../data/menu.json'
 import DishComments from './DishComments'
+import IPasta from './Interfaces/IPasta'
+
 
 const Home = () => {
-  const [selectedDish, setSelectedDish] = useState(undefined)
+  const [selectedDish, setSelectedDish] = useState<IPasta |undefined>(undefined)
 
   return (
     <Container>
@@ -32,7 +34,10 @@ const Home = () => {
       </Row>
       <Row className='mt-3 justify-content-center'>
         <Col xs={12} md={6} className='text-center'>
-          <DishComments selectedDish={selectedDish} />
+          {
+            selectedDish? <DishComments selectedDish={selectedDish} />:null
+          }
+          
         </Col>
       </Row>
     </Container>
