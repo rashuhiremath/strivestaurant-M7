@@ -1,10 +1,10 @@
 import { FormEvent, useState } from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-//import IReservation from './Interfaces/IReservation'
+import IReservation from './Interfaces/IReservation'
 
 const ReservationForm = ( )=> {
-  const [reservation, setReservation] = useState({
+  const [reservation, setReservation] = useState<IReservation>({
     name: '',
     phone: '',
     numberOfPeople: 1,

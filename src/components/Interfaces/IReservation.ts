@@ -1,5 +1,5 @@
 interface IReservation {
-_id: number,
+_id?: number,
 name: string,
 phone: string,
 numberOfPeople: number,
